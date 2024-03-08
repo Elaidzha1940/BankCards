@@ -1,16 +1,28 @@
+//  /*
 //
-//  AccountViewInfo.swift
-//  BankCards
+//  Project: BankCards
+//  File: AccountViewInfo.swift
+//  Created by: Elaidzha Shchukin
+//  Date: 08.03.2024
 //
-//  Created by Elaidzha Shchukin on 08.03.2024.
-//
+//  */
 
 import UIKit
 
-class AccountViewInfo: UIViewController {
+struct AccountViewInfo {
+    let currency: Currency
+    let amount: Int
+    let accountName: String
+    let cards: [CardTumbnailInfo]
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+enum Currency {
+    case eur
+    case rub
+    case usd
+}
 
-    }
+struct CardTumbnailInfo {
+    let image: UIImage
+    let id: String
 }
