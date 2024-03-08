@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "background")
         let accountView = AccountView()
-        let info = AccountViewInfo(currency: .eur, amount: 828, accountName: "American Express", cards: [CardTumbnailInfo(image: UIImage(named: "ae")!, id: ""), CardTumbnailInfo(image: UIImage(named: "ae")!, id: ""), CardTumbnailInfo(image:UIImage(named: "ae")!, id: "")])
+        let info = AccountViewInfo(currency: .eur, amount: 828, accountName: "Russian Standard Gold", cards: [CardTumbnailInfo(image: UIImage(named: "ae")!, id: ""), CardTumbnailInfo(image: UIImage(named: "ae")!, id: ""), CardTumbnailInfo(image:UIImage(named: "ae")!, id: "")])
         accountView.configure(with: info)
         view.addSubview(accountView)
         accountView.snp.makeConstraints { make in

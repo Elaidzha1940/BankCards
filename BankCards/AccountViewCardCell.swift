@@ -29,6 +29,7 @@ class AccountViewCardCell: UICollectionViewCell {
     //MARK: properties
     private let imageView: UIImageView = {
         let view = UIImageView()
+        view.layer.cornerRadius = 20
         return view
     }()
 }

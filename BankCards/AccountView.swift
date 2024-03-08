@@ -32,12 +32,13 @@ class AccountView: UIView {
     
     //MARK: Private constants
     private enum UIConstants {
-        static let cardWidth: CGFloat = 45
-        static let cardHeight: CGFloat = 30
+        static let cardWidth: CGFloat = 50
+        static let cardHeight: CGFloat = 35
         static let contentInsent: CGFloat = 16
-        static let currencySignImageSize: CGFloat = 30
-        static let xStackSpacing: CGFloat = 14
-        static let yStackSpacing: CGFloat = 8
+        static let currencySignImageSize: CGFloat = 40
+        static let xStackSpacing: CGFloat = 16
+        static let yStackSpacing: CGFloat = 4
+        static let cardsToAccountNameSpacing: CGFloat = 12
     }
     
     //MARK: properties
@@ -48,6 +49,7 @@ class AccountView: UIView {
     
     private let amountLabel: UILabel = {
         let label = UILabel()
+        label.font = .systemFont(ofSize: 18, weight: .bold)
         return label
     }()
     
@@ -67,8 +69,10 @@ private extension AccountView {
         layer.cornerRadius = 16
         let yStack = UIStackView()
         yStack.axis = .vertical
+        yStack.spacing = UIConstants.yStackSpacing
         yStack.addArrangedSubview(amountLabel)
         yStack.addArrangedSubview(accountLabel)
+        //yStack.addArrangedSubview(collectionView)
         
         let layout = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -80,10 +84,12 @@ private extension AccountView {
             make.height.equalTo(UIConstants.cardHeight)
         })
         yStack.addArrangedSubview(collectionView)
+        yStack.setCustomSpacing(UIConstants.cardsToAccountNameSpacing, after: accountLabel)
         
         let xStack = UIStackView()
         xStack.axis = .horizontal
         xStack.alignment = .top
+        xStack.spacing = UIConstants.xStackSpacing
         currenyImageView .snp.makeConstraints { make in
             make.size.equalTo(UIConstants.currencySignImageSize)
         }
@@ -98,11 +104,11 @@ private extension AccountView {
     func makeCurrencyImage(for currency: Currency) -> UIImage? {
         switch currency {
         case .usd:
-            return UIImage(systemName: "dollarsign.circle")
+            return UIImage(systemName: "dollarsign.circle.fill")
         case .eur:
-            return UIImage(systemName: "dollarsign.circle")
+            return UIImage(systemName: "dollarsign.circle.fill")
         case .rub:
-            return UIImage(systemName: "dollarsign.circle")
+            return UIImage(systemName: "dollarsign.circle.fill")
         }
     }
     
