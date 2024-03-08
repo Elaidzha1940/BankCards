@@ -13,7 +13,8 @@ import SnapKit
 class AccountView: UIView {
     //MARK: - Public
     func configure(with info: AccountViewInfo) {
-        
+        currenyImageView.image = makeCurrencyImage(for: info.currency)
+        amountLabel.text 
     }
     
     //MARK: - Init
@@ -30,6 +31,7 @@ class AccountView: UIView {
     private enum UIConstants {
         static let cardWidth: CGFloat = 45
         static let cardHeight: CGFloat = 30
+        static let contentInsent: CGFloat = 16
     }
     
     //MARK: properties
@@ -72,7 +74,21 @@ private extension AccountView {
         xStack.axis = .horizontal
         xStack.addArrangedSubview(currenyImageView)
         xStack.addArrangedSubview(yStack)
-
+        addSubview(xStack)
+        xStack.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(UIConstants.contentInsent)
+        }
+    }
+    
+    func makeCurrencyImage(for currency: Currency) -> UIImage? {
+        switch currency {
+        case .usd:
+            return UIImage(named: "star")
+        case .eur:
+            return UIImage(named: "star")
+        case .rub:
+            return UIImage(named: "star")
+        }
     }
 }
 

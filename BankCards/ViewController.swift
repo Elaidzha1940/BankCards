@@ -16,6 +16,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "background")
         let accountView = AccountView()
+        let info = AccountViewInfo(currency: .eur, amount: 828, accountName: "American Express", cards: [CardTumbnailInfo(image: UIImage(named: "")!, id: ""), CardTumbnailInfo(image: UIImage(named: "")!, id: ""), CardTumbnailInfo(image:UIImage(named: "")!, id: "")])
+        accountView.configure(with: info)
         view.addSubview(accountView)
         accountView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(16)
