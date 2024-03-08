@@ -16,6 +16,7 @@
 		E45022ED2B9A7D9D00806B98 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45022EC2B9A7D9D00806B98 /* AccountView.swift */; };
 		E486C5692B9A944F00273922 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E486C5682B9A944F00273922 /* SnapKit */; };
 		E486C56B2B9A994100273922 /* AccountViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E486C56A2B9A994100273922 /* AccountViewInfo.swift */; };
+		E486C56D2B9A9E5900273922 /* AccountViewCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E486C56C2B9A9E5900273922 /* AccountViewCardCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		E45022E12B9A7B1B00806B98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E45022EC2B9A7D9D00806B98 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		E486C56A2B9A994100273922 /* AccountViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewInfo.swift; sourceTree = "<group>"; };
+		E486C56C2B9A9E5900273922 /* AccountViewCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewCardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				E45022DE2B9A7B1B00806B98 /* LaunchScreen.storyboard */,
 				E45022E12B9A7B1B00806B98 /* Info.plist */,
 				E45022EC2B9A7D9D00806B98 /* AccountView.swift */,
+				E486C56C2B9A9E5900273922 /* AccountViewCardCell.swift */,
 				E486C56A2B9A994100273922 /* AccountViewInfo.swift */,
 			);
 			path = BankCards;
@@ -156,6 +159,7 @@
 				E45022D82B9A7B1A00806B98 /* ViewController.swift in Sources */,
 				E45022D42B9A7B1A00806B98 /* AppDelegate.swift in Sources */,
 				E45022D62B9A7B1A00806B98 /* SceneDelegate.swift in Sources */,
+				E486C56D2B9A9E5900273922 /* AccountViewCardCell.swift in Sources */,
 				E486C56B2B9A994100273922 /* AccountViewInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

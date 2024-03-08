@@ -13,7 +13,7 @@ import SnapKit
 class AccountView: UIView {
     //MARK: - Public
     func configure(with info: AccountViewInfo) {
-         
+        
     }
     
     //MARK: - Init
@@ -32,7 +32,7 @@ class AccountView: UIView {
         static let cardHeight: CGFloat = 30
     }
     
-    //MARK:
+    //MARK: properties
     private let currenyImageView: UIImageView = {
         let view =  UIImageView()
         return view
@@ -49,6 +49,7 @@ class AccountView: UIView {
     }()
     
     private var collectionView: UICollectionView!
+    private var cards: [CardTumbnailInfo] = []
 }
 
 //MARK: Private methods
@@ -71,7 +72,7 @@ private extension AccountView {
 //MARK: - UICollectionViewDataSource
 extension AccountView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        cards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
