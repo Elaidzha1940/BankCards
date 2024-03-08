@@ -63,9 +63,16 @@ private extension AccountView {
         
         let layout = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(AccountViewCardCell.self, forCellWithReuseIdentifier: String(describing: AccountViewCardCell.self))
         collectionView.dataSource = self
         collectionView.delegate = self
         yStack.addArrangedSubview(collectionView)
+        
+        let xStack = UIStackView()
+        xStack.axis = .horizontal
+        xStack.addArrangedSubview(currenyImageView)
+        xStack.addArrangedSubview(yStack)
+
     }
 }
 
@@ -76,7 +83,10 @@ extension AccountView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: AccountViewCardCell.self), for: indexPath) as! AccountViewCardCell
+        let image = cards[indexPath.item].image
+        cell.configure(with: image)
+        return cell
     }
     
     
