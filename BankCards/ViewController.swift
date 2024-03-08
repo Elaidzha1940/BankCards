@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         accountView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(16)
             make.centerY.equalToSuperview()
-            make.height.equalTo(100)
+            make.height.equalTo(125)
         }
     }
 }

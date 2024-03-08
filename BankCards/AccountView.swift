@@ -11,6 +11,11 @@ import UIKit
 import SnapKit
 
 class AccountView: UIView {
+    //MARK: - Public
+    func configure() {
+         
+    }
+    
     //MARK: - Init
     init() {
         super.init(frame: .zero)
@@ -20,6 +25,24 @@ class AccountView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    //MARK: Private properties
+    private let currenyImageView: UIImageView = {
+        let view =  UIImageView()
+        return view
+    }()
+    
+    private let amountLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
+    private let accountLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
+    private var collectionView: UICollectionView!
 }
 
 //MARK: Private methods
