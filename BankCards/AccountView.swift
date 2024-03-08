@@ -14,7 +14,10 @@ class AccountView: UIView {
     //MARK: - Public
     func configure(with info: AccountViewInfo) {
         currenyImageView.image = makeCurrencyImage(for: info.currency)
-        amountLabel.text 
+        amountLabel.text =  makeAmountLableText(for: info.currency, amount: info.amount)
+        accountLabel.text = info.accountName
+        cards = info.cards
+        collectionView.reloadData()
     }
     
     //MARK: - Init
@@ -32,6 +35,9 @@ class AccountView: UIView {
         static let cardWidth: CGFloat = 45
         static let cardHeight: CGFloat = 30
         static let contentInsent: CGFloat = 16
+        static let currencySignImageSize: CGFloat = 30
+        static let xStackSpacing: CGFloat = 14
+        static let yStackSpacing: CGFloat = 8
     }
     
     //MARK: properties
@@ -58,6 +64,7 @@ class AccountView: UIView {
 private extension AccountView {
     func initialize() {
         backgroundColor = UIColor(named: "cards")
+        layer.cornerRadius = 16
         let yStack = UIStackView()
         yStack.axis = .vertical
         yStack.addArrangedSubview(amountLabel)
@@ -68,10 +75,18 @@ private extension AccountView {
         collectionView.register(AccountViewCardCell.self, forCellWithReuseIdentifier: String(describing: AccountViewCardCell.self))
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.backgroundColor = .clear
+        collectionView.snp.makeConstraints({ make in
+            make.height.equalTo(UIConstants.cardHeight)
+        })
         yStack.addArrangedSubview(collectionView)
         
         let xStack = UIStackView()
         xStack.axis = .horizontal
+        xStack.alignment = .top
+        currenyImageView .snp.makeConstraints { make in
+            make.size.equalTo(UIConstants.currencySignImageSize)
+        }
         xStack.addArrangedSubview(currenyImageView)
         xStack.addArrangedSubview(yStack)
         addSubview(xStack)
@@ -83,12 +98,26 @@ private extension AccountView {
     func makeCurrencyImage(for currency: Currency) -> UIImage? {
         switch currency {
         case .usd:
-            return UIImage(named: "star")
+            return UIImage(systemName: "dollarsign.circle")
         case .eur:
-            return UIImage(named: "star")
+            return UIImage(systemName: "dollarsign.circle")
         case .rub:
-            return UIImage(named: "star")
+            return UIImage(systemName: "dollarsign.circle")
         }
+    }
+    
+    func makeAmountLableText(for currency: Currency, amount: Int) -> String {
+        var currencySign: String {
+            switch currency {
+            case .usd:
+                return "$"
+            case .eur:
+                return "€"
+            case .rub:
+                return "₽"
+            }
+        }
+        return "\(amount) \(currencySign)"
     }
 }
 
