@@ -13,6 +13,9 @@
 		E45022DB2B9A7B1A00806B98 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E45022DA2B9A7B1A00806B98 /* Base */; };
 		E45022DD2B9A7B1B00806B98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45022DC2B9A7B1B00806B98 /* Assets.xcassets */; };
 		E45022E02B9A7B1B00806B98 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E45022DF2B9A7B1B00806B98 /* Base */; };
+		E45022E92B9A7D8400806B98 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E45022E82B9A7D8400806B98 /* SnapKit */; };
+		E45022EB2B9A7D8400806B98 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = E45022EA2B9A7D8400806B98 /* SnapKit-Dynamic */; };
+		E45022ED2B9A7D9D00806B98 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45022EC2B9A7D9D00806B98 /* AccountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,7 @@
 		E45022DC2B9A7B1B00806B98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E45022DF2B9A7B1B00806B98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E45022E12B9A7B1B00806B98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E45022EC2B9A7D9D00806B98 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45022E92B9A7D8400806B98 /* SnapKit in Frameworks */,
+				E45022EB2B9A7D8400806B98 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +65,7 @@
 				E45022D32B9A7B1A00806B98 /* AppDelegate.swift */,
 				E45022D52B9A7B1A00806B98 /* SceneDelegate.swift */,
 				E45022D72B9A7B1A00806B98 /* ViewController.swift */,
+				E45022EC2B9A7D9D00806B98 /* AccountView.swift */,
 				E45022D92B9A7B1A00806B98 /* Main.storyboard */,
 				E45022DC2B9A7B1B00806B98 /* Assets.xcassets */,
 				E45022DE2B9A7B1B00806B98 /* LaunchScreen.storyboard */,
@@ -83,6 +90,10 @@
 			dependencies = (
 			);
 			name = BankCards;
+			packageProductDependencies = (
+				E45022E82B9A7D8400806B98 /* SnapKit */,
+				E45022EA2B9A7D8400806B98 /* SnapKit-Dynamic */,
+			);
 			productName = BankCards;
 			productReference = E45022D02B9A7B1A00806B98 /* BankCards.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,9 @@
 				Base,
 			);
 			mainGroup = E45022C72B9A7B1A00806B98;
+			packageReferences = (
+				E45022E72B9A7D8400806B98 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = E45022D12B9A7B1A00806B98 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45022ED2B9A7D9D00806B98 /* AccountView.swift in Sources */,
 				E45022D82B9A7B1A00806B98 /* ViewController.swift in Sources */,
 				E45022D42B9A7B1A00806B98 /* AppDelegate.swift in Sources */,
 				E45022D62B9A7B1A00806B98 /* SceneDelegate.swift in Sources */,
@@ -365,6 +380,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E45022E72B9A7D8400806B98 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E45022E82B9A7D8400806B98 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E45022E72B9A7D8400806B98 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		E45022EA2B9A7D8400806B98 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E45022E72B9A7D8400806B98 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E45022C82B9A7B1A00806B98 /* Project object */;
 }
